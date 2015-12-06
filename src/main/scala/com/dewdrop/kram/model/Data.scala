@@ -42,7 +42,7 @@ object Data {
       val ManUnited = TeamWithMinutes(Teams.ManUnited, 360)
       val Boro = TeamWithMinutes(Teams.Boro, 90)
       val Newcastle = TeamWithMinutes(Teams.Newcastle, 180)
-      val Sunderland = TeamWithMinutes(Teams.Sunderland, 180)
+      val Sunderland = TeamWithMinutes(Teams.Sunderland, 120)
       val Southampton = TeamWithMinutes(Teams.Southampton, 120)
       val Tottenham = TeamWithMinutes(Teams.Tottenham, 270)
       val Fulham = TeamWithMinutes(Teams.Fulham, 180)

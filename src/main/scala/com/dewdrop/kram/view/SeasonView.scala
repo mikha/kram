@@ -9,14 +9,21 @@ import org.scalajs.dom.html.Element
 import scalatags.JsDom.all._
 
 case class SeasonView(season: Season, teams: Seq[Team]) extends View {
-  final val VERSION = "0.0.1"
-  override def view(): html.Element = {
-    val teamSelector = TeamSelector(teams).view()
-    val fixtureList = FixtureListView(season.fixtureList.filter(_._2.exists(_._2.nonEmpty)))
-    teamSelector.onchange = (e: dom.Event) ⇒ fixtureList.filterByTeam(teamSelector.value.toInt)
+  final val VERSION = "0.1.2"
+  private val teamSelector = TeamSelector(teams).view()
+  private val allFixtures = season.fixtureList.filter(_._2.exists(_._2.nonEmpty))
+  private val fullFixtureList = FixtureListView(allFixtures)
+  private val fixtureListContainer = div(fullFixtureList.view()).render
+  override def view() = {
+    teamSelector.onchange = (e: dom.Event) ⇒ {
+      val teamId = teamSelector.value.toInt
+      fixtureListContainer.removeChild(fixtureListContainer.firstChild)
+      val newView = if (teamId > 0) CondensedFixtureListView(allFixtures, teamId) else fullFixtureList
+      fixtureListContainer.appendChild(newView.view())
+    }
     div(`class` := "container-fluid",
       h1(season.name, small(`class` := "pull-right", VERSION)),
-      teamSelector, fixtureList.view()
+      teamSelector, fixtureListContainer
     ).render
   }
 }
@@ -33,7 +40,7 @@ case class FixtureListView(fixtureList: Seq[(CalendarDay, Map[TournamentRound, S
   private val elem = div(paddingTop := "20px",
     for(child ← children) yield child.view()
   ).render
-  override def view(): Element = elem
+  override def view() = elem
   def filterByTeam(teamId: Int): Unit = {
     children.foreach(_.filterByTeam(teamId))
   }
@@ -69,11 +76,11 @@ case class TournamentRoundView(day: CalendarDay, round: TournamentRound, fixture
 }
 
 case class FixtureView(fixture: Fixture) extends MaybeVisibleView {
-  private val host = div(`class` := "col-md-2", fixture.host.name).render
-  private val visitor = div(`class` := "col-md-2", fixture.visitor.name).render
+  private val host = div(`class` := "col-md-2 col-xs-3", TeamView(fixture.host.team).view()).render
+  private val visitor = div(`class` := "col-md-2 col-xs-3", TeamView(fixture.visitor.team).view()).render
   private[view] override val elem = div(`class` := "list-group-item",
     div(`class` := "row",
-      div(`class` := "col-md-1", span(`class` := "badge", fixture.minutes)),
+      div(`class` := "col-md-1 col-xs-1", span(`class` := "badge", fixture.minutes)),
       host, visitor
     )).render
   def filterByTeam(teamId: Int): Unit = {
@@ -82,6 +89,11 @@ case class FixtureView(fixture: Fixture) extends MaybeVisibleView {
     host.makeBold(teamId == fixture.host.id)
     visitor.makeBold(teamId == fixture.visitor.id)
   }
+}
+
+case class TeamView(team: Team) extends View {
+  private val elem = a(href := s"http://pbliga.com/mng_roster.php?id=${team.id}", team.name).render
+  override def view() = elem
 }
 
 trait MaybeVisibleView extends View {
