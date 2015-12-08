@@ -12,6 +12,6 @@ object KramApp extends JSApp {
   @JSExport
   override def main(): Unit = {
     val season = SeasonView(Data.Season25, Data.Teams.AllEnglish)
-    dom.document.body.appendChild(season.view())
+    dom.document.body.appendChild(season.view().render)
   }
 }

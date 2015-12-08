@@ -6,7 +6,7 @@ import scalatags.JsDom.all._
 
 case class CondensedFixtureListView(fixtureList: Seq[(CalendarDay, Map[TournamentRound, Seq[Fixture]])], teamId: Int) extends View {
   private def renderTeam(team: Team) = div(`class` := "col-md-2 col-xs-3",
-    if (team.id == teamId) b(TeamView(team).view()).render else TeamView(team).view())
+    if (team.id == teamId) b(TeamView(team).view()) else TeamView(team).view())
   private val fixturesElements = fixtureList.flatMap {
     case (day, rounds) ⇒ rounds.flatMap {
       case (round, fixtures) ⇒ fixtures.filter(f ⇒ f.host.id == teamId || f.visitor.id == teamId).map { fixture ⇒
@@ -17,9 +17,9 @@ case class CondensedFixtureListView(fixtureList: Seq[(CalendarDay, Map[Tournamen
             div(`class` := "col-md-1 col-xs-2", span(day.date.toString)),
             div(`class` := "col-md-2 col-xs-3",
               a(href := s"http://pbliga.com/mng_results.php?day=${day.id}&tournament=${round.tournament.id}", round.toString))
-          )).render
+          ))
       }
     }
   }
-  override def view() = div(`class` := "list-group", paddingTop := "20px", fixturesElements).render
+  override def view() = div(`class` := "list-group", paddingTop := "20px", fixturesElements)
 }

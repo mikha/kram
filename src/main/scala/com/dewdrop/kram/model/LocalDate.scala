@@ -1,5 +1,7 @@
 package com.dewdrop.kram.model
 
+import scala.scalajs.js.Date
+
 case class LocalDate(year: Int, month: Int, day: Int) extends Comparable[LocalDate] {
   import LocalDate._
   verify(this)
@@ -36,4 +38,5 @@ object LocalDate {
       case _ ⇒ 31
     }
   }
+  def apply(date: Date): LocalDate = LocalDate(date.getFullYear(), date.getMonth() + 1, date.getDate())
 }
