@@ -13,7 +13,7 @@ case class FixtureListWithPastView(fixtureList: FixtureList, date: LocalDate)(fi
   )
   private def pastFixturesIfPresent = if (pastFixtures.nonEmpty) Seq(
     div(a(name := "pastFixtures", ""), h4(`class` := "pull-left", "Прошлые игры"), br),
-    fixtureListView(pastFixtures).view()
+    fixtureListView(pastFixtures.reverse).view()
   ) else Seq.empty
   private def pastFixturesLinkIfPresent = if (pastFixtures.nonEmpty)
     Some(div(h4(`class` := "pull-right", a(href := "#pastFixtures", "Прошлые игры")), br))
