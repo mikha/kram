@@ -1,2 +1,2 @@
-# kram
-KRAM england.pbliga.com
+# Клуб Развития Английской Молодежи
+###### scala.js client-only single page
