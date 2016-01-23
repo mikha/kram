@@ -32,7 +32,7 @@ object Data {
     private object TeamsWithMinutes {
       val Arsenal = TeamWithMinutes(Teams.Arsenal, 270)
       val AstonVilla = TeamWithMinutes(Teams.AstonVilla, 270)
-      val Birmingham = TeamWithMinutes(Teams.Birmingham, 360)
+      val Birmingham = TeamWithMinutes(Teams.Birmingham, 0)
       val Blackburn = TeamWithMinutes(Teams.Blackburn, 180)
       val Bolton = TeamWithMinutes(Teams.Bolton, 270)
       val WestHam = TeamWithMinutes(Teams.WestHam, 360)
