@@ -1,12 +1,14 @@
 package com.dewdrop.kram.view
 
 import com.dewdrop.kram.model._
+import org.scalajs.dom.html.Div
 
+import scalatags.JsDom
 import scalatags.JsDom.all._
 
 case class FixtureListWithPastView(fixtureList: FixtureList, date: LocalDate)(fixtureListView: FixtureList ⇒ View) extends View {
   private val (pastFixtures, futureFixtures) = fixtureList.partition(_._1.date.compareTo(date) < 0)
-  override def view() = div(
+  override def view(): JsDom.TypedTag[Div] = div(
     pastFixturesLinkIfPresent,
     fixtureListView(futureFixtures).view(),
     pastFixturesIfPresent

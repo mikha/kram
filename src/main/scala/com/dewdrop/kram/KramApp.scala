@@ -11,7 +11,7 @@ import scala.scalajs.js.annotation.JSExport
 object KramApp extends JSApp {
   @JSExport
   override def main(): Unit = {
-    val season = SeasonView(Data.Season27, Data.Teams.AllEnglish)
+    val season = SeasonView(Data.Season28)
     dom.document.body.appendChild(season.view().render)
   }
 }
