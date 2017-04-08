@@ -19,7 +19,7 @@ object Data {
       val Leeds = Team(198, "Лидс Юнайтед", 120)
       val ManCity = Team(38, "Манчестер Сити", 90)
       val ManUnited = Team(88, "Манчестер Юнайтед", 0)
-      val Boro = Team(432, "Мидлсбро", 180)
+      val Boro = Team(432, "Мидлсбро", 90)
       val Newcastle = Team(20, "Ньюкасл Юнайтед", 0)
       val Sunderland = Team(995, "Сандерленд", 0)
       val Southampton = Team(74, "Саутгемптон", 180)

@@ -9,7 +9,7 @@ import scalatags.JsDom
 import scalatags.JsDom.all._
 
 case class SeasonView(season: Season) extends View {
-  final val VERSION = "3.0.0"
+  final val VERSION = "3.0.1"
   private val allFixtures = season.fixtureList.filter(_._2.exists(_._2.nonEmpty))
   private val fixtureListWithPastView = FixtureListWithPastView(allFixtures, LocalDate(new Date(Date.now())))_
   private val teamSelector = TeamSelector(season.teams).view().render
