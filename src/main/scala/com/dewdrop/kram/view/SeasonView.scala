@@ -9,7 +9,7 @@ import scalatags.JsDom
 import scalatags.JsDom.all._
 
 case class SeasonView(season: Season) extends View {
-  final val VERSION = "3.0.1"
+  final val VERSION = "4.0.0"
   private val allFixtures = season.fixtureList.filter(_._2.exists(_._2.nonEmpty))
   private val fixtureListWithPastView = FixtureListWithPastView(allFixtures, LocalDate(new Date(Date.now())))_
   private val teamSelector = TeamSelector(season.teams).view().render
@@ -38,7 +38,7 @@ case class TeamSelector(teams: Seq[Team]) extends View {
 
 case class FixtureListView(fixtureList: FixtureList) extends View {
   private val children = fixtureList.map {
-    case (day, rounds) ⇒ CalendarDayView(day, rounds.mapValues(_.filter(_.minutes > 0)).filter(_._2.nonEmpty))
+    case (day, rounds) ⇒ CalendarDayView(day, rounds.filter(_._2.nonEmpty))
   }
   private val elem = div(paddingTop := "20px",
     for(child ← children) yield child.view()
