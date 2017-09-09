@@ -9,17 +9,17 @@ import scalatags.JsDom
 import scalatags.JsDom.all._
 
 case class SeasonView(season: Season) extends View {
-  final val VERSION = "4.0.0"
+  final val VERSION = "4.0.1"
   private val allFixtures = season.fixtureList.filter(_._2.exists(_._2.nonEmpty))
   private val fixtureListWithPastView = FixtureListWithPastView(allFixtures, LocalDate(new Date(Date.now())))_
   private val teamSelector = TeamSelector(season.teams).view().render
-  private val fixtureListContainer = div(fixtureListWithPastView(FixtureListView).view()).render
+  private val fixtureListContainer = div(fixtureListWithPastView(fixtures ⇒ FixtureListView(fixtures, season.participantsOnly)).view()).render
   override def view(): JsDom.all.ConcreteHtmlTag[Element] = {
     teamSelector.onchange = (_: dom.Event) ⇒ {
       val teamId = teamSelector.value.toInt
       fixtureListContainer.removeChild(fixtureListContainer.firstChild)
       val newView = if (teamId > 0) fixtureListWithPastView(fixtures ⇒ CondensedFixtureListView(fixtures, teamId))
-      else fixtureListWithPastView(FixtureListView)
+      else fixtureListWithPastView(fixtures ⇒ FixtureListView(fixtures, season.participantsOnly))
       fixtureListContainer.appendChild(newView.view().render)
     }
     div(`class` := "container-fluid",
@@ -36,9 +36,9 @@ case class TeamSelector(teams: Seq[Team]) extends View {
   )
 }
 
-case class FixtureListView(fixtureList: FixtureList) extends View {
+case class FixtureListView(fixtureList: FixtureList, participantsOnly: Boolean) extends View {
   private val children = fixtureList.map {
-    case (day, rounds) ⇒ CalendarDayView(day, rounds.filter(_._2.nonEmpty))
+    case (day, rounds) ⇒ CalendarDayView(day, rounds.mapValues(_.filter(f ⇒ !participantsOnly || f.minutes > 0)).filter(_._2.nonEmpty))
   }
   private val elem = div(paddingTop := "20px",
     for(child ← children) yield child.view()

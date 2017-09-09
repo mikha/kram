@@ -8,7 +8,7 @@ object Data {
   import Tournaments._
   object Season29 extends Season {
     override val name = "КРАМ: 29-й сезон"
-    override val participantsOnly: Boolean = false
+    override val participantsOnly: Boolean = true
     private object TeamsWithMinutes {
       val Arsenal = Team(14, "Арсенал", 0)
       val AstonVilla = Team(809, "Астон Вилла", 0)
@@ -16,18 +16,18 @@ object Data {
       val Blackburn = Team(862, "Блэкберн Роверс", 0)
       val Bolton = Team(40, "Болтон Уондерерс", 0)
       val WestHam = Team(195, "Вест Хэм Юнайтед", 0)
-      val Liverpool = Team(143, "Ливерпуль", 0)
-      val Leeds = Team(198, "Лидс Юнайтед", 0)
-      val ManCity = Team(38, "Манчестер Сити", 0)
+      val Liverpool = Team(143, "Ливерпуль", 180)
+      val Leeds = Team(198, "Лидс Юнайтед", 90)
+      val ManCity = Team(38, "Манчестер Сити", 180)
       val ManUnited = Team(88, "Манчестер Юнайтед", 0)
-      val Boro = Team(432, "Мидлсбро", 0)
+      val Boro = Team(432, "Мидлсбро", 90)
       val Newcastle = Team(20, "Ньюкасл Юнайтед", 0)
       val Sunderland = Team(995, "Сандерленд", 0)
-      val Southampton = Team(74, "Саутгемптон", 0)
-      val Tottenham = Team(19, "Тоттенхэм Хотспур", 0)
-      val Fulham = Team(192, "Фулхэм", 0)
+      val Southampton = Team(74, "Саутгемптон", 360)
+      val Tottenham = Team(19, "Тоттенхэм Хотспур", 360)
+      val Fulham = Team(192, "Фулхэм", 270)
       val Chelsea = Team(70, "Челси", 0)
-      val Everton = Team(803, "Эвертон", 0)
+      val Everton = Team(803, "Эвертон", 180)
     }
     import TeamsWithMinutes._
     protected override val matchDays: Map[TournamentRound, Seq[Fixture]] = Map(
