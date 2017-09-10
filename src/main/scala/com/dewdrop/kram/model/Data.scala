@@ -8,9 +8,10 @@ object Data {
   import Tournaments._
   object Season29 extends Season {
     override val name = "КРАМ: 29-й сезон"
+    override val version = "4.0.2"
     override val participantsOnly: Boolean = true
     private object TeamsWithMinutes {
-      val Arsenal = Team(14, "Арсенал", 0)
+      val Arsenal = Team(14, "Арсенал", 90)
       val AstonVilla = Team(809, "Астон Вилла", 0)
       val Birmingham = Team(23, "Бирмингем Сити", 0)
       val Blackburn = Team(862, "Блэкберн Роверс", 0)

@@ -3,6 +3,7 @@ package com.dewdrop.kram.model
 trait Season {
   def name: String
   def participantsOnly: Boolean
+  def version: String
   protected def matchDays: Map[TournamentRound, Seq[Fixture]]
   private lazy val filteredMatchDays: Map[TournamentRound, Seq[Fixture]] = {
     if (participantsOnly) matchDays.mapValues(_.filter(_.hasParticipant)) else matchDays
