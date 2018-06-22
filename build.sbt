@@ -12,4 +12,4 @@ jsEnv := new org.scalajs.jsenv.jsdomnodejs.JSDOMNodeJSEnv
 
 scalaJSUseMainModuleInitializer in Compile := true
 
-libraryDependencies += "com.lihaoyi" %%% "scalatags" % "0.6.5"
+libraryDependencies += "com.lihaoyi" %%% "scalatags" % "0.6.7"

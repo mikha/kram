@@ -9,7 +9,7 @@ import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
 object KramApp {
   @JSExport
   def main(args: Array[String]): Unit = {
-    val season = SeasonView(Data.Season29)
+    val season = SeasonView(Data.SeasonData)
     dom.document.body.appendChild(season.view().render)
   }
 

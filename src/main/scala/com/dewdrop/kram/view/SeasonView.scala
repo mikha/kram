@@ -50,7 +50,7 @@ case class CalendarDayView(day: CalendarDay, rounds: Map[TournamentRound, Seq[Fi
     case (round, fixtures) ⇒ TournamentRoundView(day, round, fixtures)
   }
   private val elem = div(`class` := "panel panel-default",
-    div(`class` := "panel-heading", day.date.toString),
+    div(`class` := "panel-heading", day.date.toWeekDay() + ", " + day.date.toString),
     div(`class` := "panel-body", for(child ← children) yield child.view())
   )
   override def view(): JsDom.all.ConcreteHtmlTag[Element] = elem

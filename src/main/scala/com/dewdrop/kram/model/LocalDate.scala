@@ -5,6 +5,8 @@ import scala.scalajs.js.Date
 case class LocalDate(year: Int, month: Int, day: Int) extends Comparable[LocalDate] {
   import LocalDate._
   verify(this)
+  private val date = new Date(year, month - 1, day, 12)
+  def toWeekDay(long: Boolean = true): String = weekDay(date, long)
   override def toString: String = f"$day%02d-$month%02d-$year%04d"
   override def compareTo(o: LocalDate): Int = {
     year - o.year match {
@@ -39,4 +41,14 @@ object LocalDate {
     }
   }
   def apply(date: Date): LocalDate = LocalDate(date.getFullYear(), date.getMonth() + 1, date.getDate())
+  def weekDay(date: Date, long: Boolean): String = date.getDay() match {
+    case 1 ⇒ if (long) "Понедельник" else "Пн"
+    case 2 ⇒ if (long) "Вторник" else "Вт"
+    case 3 ⇒ if (long) "Среда" else "Ср"
+    case 4 ⇒ if (long) "Четверг" else "Чт"
+    case 5 ⇒ if (long) "Пятница" else "Пт"
+    case 6 ⇒ if (long) "Суббота" else "Сб"
+    case 0 ⇒ if (long) "Воскресенье" else "Вс"
+    case a ⇒ "?" + a
+  }
 }

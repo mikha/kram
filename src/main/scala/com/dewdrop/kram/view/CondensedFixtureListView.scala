@@ -14,7 +14,7 @@ case class CondensedFixtureListView(fixtureList: Seq[(CalendarDay, Map[Tournamen
       case (round, fixtures) ⇒ fixtures.filter(f ⇒ f.host.id == teamId || f.visitor.id == teamId).map { fixture ⇒
         div(`class` := "list-group-item",
           div(`class` := "row",
-            div(`class` := "col-xs-2", span(day.date.toString)),
+            div(`class` := "col-xs-2", span(day.date.toString + " - " + day.date.toWeekDay(false))),
             renderTeam(fixture.host, host = true),
             div(`class` := "col-xs-1 text-center", span(`class` := "badge", fixture.minutes)),
             renderTeam(fixture.visitor, host = false),
