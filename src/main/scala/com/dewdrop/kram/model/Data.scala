@@ -7,344 +7,344 @@ object Data {
   }
   import Tournaments._
   object SeasonData extends Season {
-    override val name = "КРАМ: 35-й сезон"
-    override val version = "9.0.1"
+    override val name = "КРАМ: 36-й сезон"
+    override val version = "10.0.0"
     override val participantsOnly: Boolean = true
     private object TeamsWithMinutes {
-      val Arsenal = Team(14, "Арсенал", 270)
+      val Arsenal = Team(14, "Арсенал", 0)
       val AstonVilla = Team(809, "Астон Вилла", 90)
       val Birmingham = Team(23, "Бирмингем Сити", 0)
-      val Blackburn = Team(862, "Блэкберн Роверс", 0)
-      val Bolton = Team(40, "Болтон Уондерерс", 270)
-      val WestHam = Team(195, "Вест Хэм Юнайтед", 90)
-      val Liverpool = Team(143, "Ливерпуль", 180)
+      val Blackburn = Team(862, "Блэкберн Роверс", 90)
+      val Bolton = Team(40, "Болтон Уондерерс", 210)
+      val WestHam = Team(195, "Вест Хэм Юнайтед", 45)
+      val Liverpool = Team(143, "Ливерпуль", 210)
       val Leeds = Team(198, "Лидс Юнайтед", 0)
-      val ManCity = Team(38, "Манчестер Сити", 270)
-      val ManUnited = Team(88, "Манчестер Юнайтед", 90)
-      val Boro = Team(432, "Мидлсбро", 180)
+      val ManCity = Team(38, "Манчестер Сити", 210)
+      val ManUnited = Team(88, "Манчестер Юнайтед", 120)
+      val Boro = Team(432, "Мидлсбро", 0)
       val Newcastle = Team(20, "Ньюкасл Юнайтед", 0)
       val Sunderland = Team(995, "Сандерленд", 0)
       val Southampton = Team(74, "Саутгемптон", 0)
-      val Tottenham = Team(19, "Тоттенхэм Хотспур", 180)
-      val Fulham = Team(192, "Фулхэм", 270)
-      val Chelsea = Team(70, "Челси", 0)
-      val Everton = Team(803, "Эвертон", 90)
+      val Tottenham = Team(19, "Тоттенхэм Хотспур", 90)
+      val Fulham = Team(192, "Фулхэм", 90)
+      val Chelsea = Team(70, "Челси", 210)
+      val Everton = Team(803, "Эвертон", 180)
     }
     import TeamsWithMinutes._
     protected override val matchDays: Map[TournamentRound, Seq[Fixture]] = Map(
       TournamentRound(EnglandChamp, "тур 1") -> Seq(
-        Fixture(Bolton, Sunderland),
-        Fixture(Liverpool, Fulham),
-        Fixture(Arsenal, Tottenham),
-        Fixture(Birmingham, Everton),
-        Fixture(WestHam, ManCity),
-        Fixture(ManUnited, Boro),
-        Fixture(Blackburn, AstonVilla)
+        Fixture(Liverpool, Tottenham),
+        Fixture(AstonVilla, Chelsea),
+        Fixture(Bolton, WestHam),
+        Fixture(Sunderland, Birmingham),
+        Fixture(Everton, Blackburn),
+        Fixture(Fulham, ManUnited),
+        Fixture(Boro, ManCity),
       ),
       TournamentRound(EnglandChamp, "тур 2") -> Seq(
-        Fixture(Bolton, Liverpool),
-        Fixture(Sunderland, Fulham),
-        Fixture(Arsenal, WestHam),
-        Fixture(ManCity, Birmingham),
-        Fixture(Everton, ManUnited),
-        Fixture(Boro, AstonVilla),
-        Fixture(Tottenham, Blackburn)
+        Fixture(Liverpool, AstonVilla),
+        Fixture(Tottenham, Chelsea),
+        Fixture(Bolton, Everton),
+        Fixture(Blackburn, Sunderland),
+        Fixture(Birmingham, Fulham),
+        Fixture(ManUnited, ManCity),
+        Fixture(WestHam, Boro),
       ),
       TournamentRound(EnglandChamp, "тур 3") -> Seq(
-        Fixture(Sunderland, Birmingham),
-        Fixture(Liverpool, Arsenal),
-        Fixture(Fulham, Bolton),
-        Fixture(WestHam, AstonVilla),
-        Fixture(ManUnited, ManCity),
-        Fixture(Tottenham, Everton),
-        Fixture(Blackburn, Boro)
+        Fixture(Tottenham, Sunderland),
+        Fixture(AstonVilla, Bolton),
+        Fixture(Chelsea, Liverpool),
+        Fixture(Everton, ManCity),
+        Fixture(Fulham, Blackburn),
+        Fixture(WestHam, Birmingham),
+        Fixture(Boro, ManUnited),
       ),
       TournamentRound(EnglandChamp, "тур 4") -> Seq(
-        Fixture(Bolton, Arsenal),
-        Fixture(Fulham, WestHam),
-        Fixture(Birmingham, Liverpool),
-        Fixture(ManUnited, Sunderland),
-        Fixture(Everton, Blackburn),
-        Fixture(Boro, ManCity),
-        Fixture(AstonVilla, Tottenham)
+        Fixture(Liverpool, Bolton),
+        Fixture(Chelsea, Everton),
+        Fixture(Sunderland, AstonVilla),
+        Fixture(Fulham, Tottenham),
+        Fixture(Birmingham, Boro),
+        Fixture(ManUnited, Blackburn),
+        Fixture(ManCity, WestHam),
       ),
       TournamentRound(EnglandChamp, "тур 5") -> Seq(
-        Fixture(Sunderland, AstonVilla),
-        Fixture(Liverpool, Everton),
-        Fixture(Arsenal, Fulham),
-        Fixture(ManCity, Bolton),
-        Fixture(Birmingham, WestHam),
-        Fixture(Tottenham, Boro),
-        Fixture(Blackburn, ManUnited)
+        Fixture(Tottenham, ManCity),
+        Fixture(AstonVilla, Birmingham),
+        Fixture(Bolton, Chelsea),
+        Fixture(Blackburn, Liverpool),
+        Fixture(Sunderland, Everton),
+        Fixture(WestHam, ManUnited),
+        Fixture(Boro, Fulham),
       ),
       TournamentRound(EnglandChamp, "тур 6") -> Seq(
-        Fixture(Bolton, Birmingham),
         Fixture(Liverpool, Sunderland),
-        Fixture(Fulham, ManUnited),
-        Fixture(ManCity, Tottenham),
-        Fixture(WestHam, Blackburn),
+        Fixture(AstonVilla, Tottenham),
+        Fixture(Chelsea, Fulham),
+        Fixture(Blackburn, WestHam),
         Fixture(Everton, Boro),
-        Fixture(AstonVilla, Arsenal)
+        Fixture(Birmingham, ManUnited),
+        Fixture(ManCity, Bolton),
       ),
       TournamentRound(EnglandChamp, "тур 7") -> Seq(
-        Fixture(Sunderland, ManCity),
-        Fixture(WestHam, Bolton),
+        Fixture(Tottenham, Blackburn),
+        Fixture(Everton, Liverpool),
+        Fixture(Fulham, ManCity),
+        Fixture(Birmingham, Bolton),
         Fixture(ManUnited, AstonVilla),
-        Fixture(Everton, Arsenal),
-        Fixture(Boro, Liverpool),
-        Fixture(Tottenham, Fulham),
-        Fixture(Blackburn, Birmingham)
+        Fixture(WestHam, Chelsea),
+        Fixture(Boro, Sunderland),
       ),
       TournamentRound(EnglandChamp, "тур 8") -> Seq(
-        Fixture(Bolton, Everton),
-        Fixture(Sunderland, Boro),
-        Fixture(Arsenal, Blackburn),
-        Fixture(ManCity, Liverpool),
-        Fixture(Birmingham, ManUnited),
-        Fixture(Tottenham, WestHam),
-        Fixture(AstonVilla, Fulham)
+        Fixture(Liverpool, Birmingham),
+        Fixture(Tottenham, ManUnited),
+        Fixture(Bolton, Boro),
+        Fixture(Blackburn, AstonVilla),
+        Fixture(Sunderland, Fulham),
+        Fixture(WestHam, Everton),
+        Fixture(ManCity, Chelsea),
       ),
       TournamentRound(EnglandChamp, "тур 9") -> Seq(
-        Fixture(Liverpool, Tottenham),
-        Fixture(Fulham, Everton),
-        Fixture(WestHam, Sunderland),
+        Fixture(AstonVilla, WestHam),
+        Fixture(Chelsea, Birmingham),
+        Fixture(Everton, Tottenham),
+        Fixture(Fulham, Liverpool),
         Fixture(ManUnited, Bolton),
-        Fixture(Boro, Arsenal),
-        Fixture(AstonVilla, Birmingham),
-        Fixture(Blackburn, ManCity)
+        Fixture(ManCity, Sunderland),
+        Fixture(Boro, Blackburn),
       ),
       TournamentRound(EnglandChamp, "тур 10") -> Seq(
+        Fixture(Liverpool, WestHam),
         Fixture(Bolton, Tottenham),
-        Fixture(Arsenal, Sunderland),
-        Fixture(ManCity, Fulham),
-        Fixture(Birmingham, Boro),
-        Fixture(ManUnited, WestHam),
-        Fixture(Everton, AstonVilla),
-        Fixture(Blackburn, Liverpool)
+        Fixture(Blackburn, Chelsea),
+        Fixture(Sunderland, ManUnited),
+        Fixture(Fulham, Everton),
+        Fixture(Birmingham, ManCity),
+        Fixture(Boro, AstonVilla),
       ),
       TournamentRound(EnglandChamp, "тур 11") -> Seq(
-        Fixture(Sunderland, Everton),
-        Fixture(Liverpool, WestHam),
-        Fixture(Fulham, Blackburn),
-        Fixture(Birmingham, Arsenal),
-        Fixture(Boro, Bolton),
-        Fixture(Tottenham, ManUnited),
-        Fixture(AstonVilla, ManCity)
+        Fixture(Tottenham, Birmingham),
+        Fixture(AstonVilla, Everton),
+        Fixture(Chelsea, Boro),
+        Fixture(Sunderland, Bolton),
+        Fixture(ManUnited, Liverpool),
+        Fixture(WestHam, Fulham),
+        Fixture(ManCity, Blackburn),
       ),
       TournamentRound(EnglandChamp, "тур 12") -> Seq(
-        Fixture(Fulham, Boro),
-        Fixture(ManCity, Arsenal),
-        Fixture(WestHam, Everton),
-        Fixture(ManUnited, Liverpool),
-        Fixture(Tottenham, Birmingham),
-        Fixture(AstonVilla, Bolton),
-        Fixture(Blackburn, Sunderland)
+        Fixture(Chelsea, ManUnited),
+        Fixture(Blackburn, Bolton),
+        Fixture(Everton, Birmingham),
+        Fixture(Fulham, AstonVilla),
+        Fixture(WestHam, Sunderland),
+        Fixture(ManCity, Liverpool),
+        Fixture(Boro, Tottenham),
       ),
       TournamentRound(EnglandChamp, "тур 13") -> Seq(
-        Fixture(Bolton, Blackburn),
-        Fixture(Sunderland, Tottenham),
-        Fixture(Liverpool, AstonVilla),
-        Fixture(Arsenal, ManUnited),
-        Fixture(Birmingham, Fulham),
-        Fixture(WestHam, Boro),
-        Fixture(Everton, ManCity)
+        Fixture(Liverpool, Boro),
+        Fixture(Tottenham, WestHam),
+        Fixture(AstonVilla, ManCity),
+        Fixture(Bolton, Fulham),
+        Fixture(Sunderland, Chelsea),
+        Fixture(Everton, ManUnited),
+        Fixture(Birmingham, Blackburn),
       ),
       TournamentRound(EnglandChamp, "тур 14") -> Seq(
-        ReverseFixture(Bolton, Sunderland),
-        ReverseFixture(Liverpool, Fulham),
-        ReverseFixture(Arsenal, Tottenham),
-        ReverseFixture(Birmingham, Everton),
-        ReverseFixture(WestHam, ManCity),
-        ReverseFixture(ManUnited, Boro),
-        ReverseFixture(Blackburn, AstonVilla)
+        ReverseFixture(Liverpool, Tottenham),
+        ReverseFixture(AstonVilla, Chelsea),
+        ReverseFixture(Bolton, WestHam),
+        ReverseFixture(Sunderland, Birmingham),
+        ReverseFixture(Everton, Blackburn),
+        ReverseFixture(Fulham, ManUnited),
+        ReverseFixture(Boro, ManCity),
       ),
       TournamentRound(EnglandChamp, "тур 15") -> Seq(
-        ReverseFixture(Bolton, Liverpool),
-        ReverseFixture(Sunderland, Fulham),
-        ReverseFixture(Arsenal, WestHam),
-        ReverseFixture(ManCity, Birmingham),
-        ReverseFixture(Everton, ManUnited),
-        ReverseFixture(Boro, AstonVilla),
-        ReverseFixture(Tottenham, Blackburn)
+        ReverseFixture(Liverpool, AstonVilla),
+        ReverseFixture(Tottenham, Chelsea),
+        ReverseFixture(Bolton, Everton),
+        ReverseFixture(Blackburn, Sunderland),
+        ReverseFixture(Birmingham, Fulham),
+        ReverseFixture(ManUnited, ManCity),
+        ReverseFixture(WestHam, Boro),
       ),
       TournamentRound(EnglandChamp, "тур 16") -> Seq(
-        ReverseFixture(Sunderland, Birmingham),
-        ReverseFixture(Liverpool, Arsenal),
-        ReverseFixture(Fulham, Bolton),
-        ReverseFixture(WestHam, AstonVilla),
-        ReverseFixture(ManUnited, ManCity),
-        ReverseFixture(Tottenham, Everton),
-        ReverseFixture(Blackburn, Boro)
+        ReverseFixture(Tottenham, Sunderland),
+        ReverseFixture(AstonVilla, Bolton),
+        ReverseFixture(Chelsea, Liverpool),
+        ReverseFixture(Everton, ManCity),
+        ReverseFixture(Fulham, Blackburn),
+        ReverseFixture(WestHam, Birmingham),
+        ReverseFixture(Boro, ManUnited),
       ),
       TournamentRound(EnglandChamp, "тур 17") -> Seq(
-        ReverseFixture(Bolton, Arsenal),
-        ReverseFixture(Fulham, WestHam),
-        ReverseFixture(Birmingham, Liverpool),
-        ReverseFixture(ManUnited, Sunderland),
-        ReverseFixture(Everton, Blackburn),
-        ReverseFixture(Boro, ManCity),
-        ReverseFixture(AstonVilla, Tottenham)
+        ReverseFixture(Liverpool, Bolton),
+        ReverseFixture(Chelsea, Everton),
+        ReverseFixture(Sunderland, AstonVilla),
+        ReverseFixture(Fulham, Tottenham),
+        ReverseFixture(Birmingham, Boro),
+        ReverseFixture(ManUnited, Blackburn),
+        ReverseFixture(ManCity, WestHam),
       ),
       TournamentRound(EnglandChamp, "тур 18") -> Seq(
-        ReverseFixture(Sunderland, AstonVilla),
-        ReverseFixture(Liverpool, Everton),
-        ReverseFixture(Arsenal, Fulham),
-        ReverseFixture(ManCity, Bolton),
-        ReverseFixture(Birmingham, WestHam),
-        ReverseFixture(Tottenham, Boro),
-        ReverseFixture(Blackburn, ManUnited)
+        ReverseFixture(Tottenham, ManCity),
+        ReverseFixture(AstonVilla, Birmingham),
+        ReverseFixture(Bolton, Chelsea),
+        ReverseFixture(Blackburn, Liverpool),
+        ReverseFixture(Sunderland, Everton),
+        ReverseFixture(WestHam, ManUnited),
+        ReverseFixture(Boro, Fulham),
       ),
       TournamentRound(EnglandChamp, "тур 19") -> Seq(
-        ReverseFixture(Bolton, Birmingham),
         ReverseFixture(Liverpool, Sunderland),
-        ReverseFixture(Fulham, ManUnited),
-        ReverseFixture(ManCity, Tottenham),
-        ReverseFixture(WestHam, Blackburn),
+        ReverseFixture(AstonVilla, Tottenham),
+        ReverseFixture(Chelsea, Fulham),
+        ReverseFixture(Blackburn, WestHam),
         ReverseFixture(Everton, Boro),
-        ReverseFixture(AstonVilla, Arsenal)
+        ReverseFixture(Birmingham, ManUnited),
+        ReverseFixture(ManCity, Bolton),
       ),
       TournamentRound(EnglandChamp, "тур 20") -> Seq(
-        ReverseFixture(Sunderland, ManCity),
-        ReverseFixture(WestHam, Bolton),
+        ReverseFixture(Tottenham, Blackburn),
+        ReverseFixture(Everton, Liverpool),
+        ReverseFixture(Fulham, ManCity),
+        ReverseFixture(Birmingham, Bolton),
         ReverseFixture(ManUnited, AstonVilla),
-        ReverseFixture(Everton, Arsenal),
-        ReverseFixture(Boro, Liverpool),
-        ReverseFixture(Tottenham, Fulham),
-        ReverseFixture(Blackburn, Birmingham)
+        ReverseFixture(WestHam, Chelsea),
+        ReverseFixture(Boro, Sunderland),
       ),
       TournamentRound(EnglandChamp, "тур 21") -> Seq(
-        ReverseFixture(Bolton, Everton),
-        ReverseFixture(Sunderland, Boro),
-        ReverseFixture(Arsenal, Blackburn),
-        ReverseFixture(ManCity, Liverpool),
-        ReverseFixture(Birmingham, ManUnited),
-        ReverseFixture(Tottenham, WestHam),
-        ReverseFixture(AstonVilla, Fulham)
+        ReverseFixture(Liverpool, Birmingham),
+        ReverseFixture(Tottenham, ManUnited),
+        ReverseFixture(Bolton, Boro),
+        ReverseFixture(Blackburn, AstonVilla),
+        ReverseFixture(Sunderland, Fulham),
+        ReverseFixture(WestHam, Everton),
+        ReverseFixture(ManCity, Chelsea),
       ),
       TournamentRound(EnglandChamp, "тур 22") -> Seq(
-        ReverseFixture(Liverpool, Tottenham),
-        ReverseFixture(Fulham, Everton),
-        ReverseFixture(WestHam, Sunderland),
+        ReverseFixture(AstonVilla, WestHam),
+        ReverseFixture(Chelsea, Birmingham),
+        ReverseFixture(Everton, Tottenham),
+        ReverseFixture(Fulham, Liverpool),
         ReverseFixture(ManUnited, Bolton),
-        ReverseFixture(Boro, Arsenal),
-        ReverseFixture(AstonVilla, Birmingham),
-        ReverseFixture(Blackburn, ManCity)
+        ReverseFixture(ManCity, Sunderland),
+        ReverseFixture(Boro, Blackburn),
       ),
       TournamentRound(EnglandChamp, "тур 23") -> Seq(
+        ReverseFixture(Liverpool, WestHam),
         ReverseFixture(Bolton, Tottenham),
-        ReverseFixture(Arsenal, Sunderland),
-        ReverseFixture(ManCity, Fulham),
-        ReverseFixture(Birmingham, Boro),
-        ReverseFixture(ManUnited, WestHam),
-        ReverseFixture(Everton, AstonVilla),
-        ReverseFixture(Blackburn, Liverpool)
+        ReverseFixture(Blackburn, Chelsea),
+        ReverseFixture(Sunderland, ManUnited),
+        ReverseFixture(Fulham, Everton),
+        ReverseFixture(Birmingham, ManCity),
+        ReverseFixture(Boro, AstonVilla),
       ),
       TournamentRound(EnglandChamp, "тур 24") -> Seq(
-        ReverseFixture(Sunderland, Everton),
-        ReverseFixture(Liverpool, WestHam),
-        ReverseFixture(Fulham, Blackburn),
-        ReverseFixture(Birmingham, Arsenal),
-        ReverseFixture(Boro, Bolton),
-        ReverseFixture(Tottenham, ManUnited),
-        ReverseFixture(AstonVilla, ManCity)
+        ReverseFixture(Tottenham, Birmingham),
+        ReverseFixture(AstonVilla, Everton),
+        ReverseFixture(Chelsea, Boro),
+        ReverseFixture(Sunderland, Bolton),
+        ReverseFixture(ManUnited, Liverpool),
+        ReverseFixture(WestHam, Fulham),
+        ReverseFixture(ManCity, Blackburn),
       ),
       TournamentRound(EnglandChamp, "тур 25") -> Seq(
-        ReverseFixture(Fulham, Boro),
-        ReverseFixture(ManCity, Arsenal),
-        ReverseFixture(WestHam, Everton),
-        ReverseFixture(ManUnited, Liverpool),
-        ReverseFixture(Tottenham, Birmingham),
-        ReverseFixture(AstonVilla, Bolton),
-        ReverseFixture(Blackburn, Sunderland)
+        ReverseFixture(Chelsea, ManUnited),
+        ReverseFixture(Blackburn, Bolton),
+        ReverseFixture(Everton, Birmingham),
+        ReverseFixture(Fulham, AstonVilla),
+        ReverseFixture(WestHam, Sunderland),
+        ReverseFixture(ManCity, Liverpool),
+        ReverseFixture(Boro, Tottenham),
       ),
       TournamentRound(EnglandChamp, "тур 26") -> Seq(
-        ReverseFixture(Bolton, Blackburn),
-        ReverseFixture(Sunderland, Tottenham),
-        ReverseFixture(Liverpool, AstonVilla),
-        ReverseFixture(Arsenal, ManUnited),
-        ReverseFixture(Birmingham, Fulham),
-        ReverseFixture(WestHam, Boro),
-        ReverseFixture(Everton, ManCity)
+        ReverseFixture(Liverpool, Boro),
+        ReverseFixture(Tottenham, WestHam),
+        ReverseFixture(AstonVilla, ManCity),
+        ReverseFixture(Bolton, Fulham),
+        ReverseFixture(Sunderland, Chelsea),
+        ReverseFixture(Everton, ManUnited),
+        ReverseFixture(Birmingham, Blackburn),
       )
     )
     protected override val calendar: Map[CalendarDay, Seq[TournamentRound]] =
       Map(
-        CalendarDay(4303, LocalDate(2020, 2, 27)) -> Seq(
+        CalendarDay(4389, LocalDate(2020, 7, 3)) -> Seq(
           TournamentRound(EnglandChamp, "тур 1")
         ),
-        CalendarDay(4305, LocalDate(2020, 3, 2)) -> Seq(
+        CalendarDay(4391, LocalDate(2020, 7, 6)) -> Seq(
           TournamentRound(EnglandChamp, "тур 2")
         ),
-        CalendarDay(4307, LocalDate(2020, 3, 5)) -> Seq(
+        CalendarDay(4393, LocalDate(2020, 7, 9)) -> Seq(
           TournamentRound(EnglandChamp, "тур 3")
         ),
-        CalendarDay(4309, LocalDate(2020, 3, 9)) -> Seq(
+        CalendarDay(4395, LocalDate(2020, 7, 13)) -> Seq(
           TournamentRound(EnglandChamp, "тур 4")
         ),
-        CalendarDay(4311, LocalDate(2020, 3, 12)) -> Seq(
+        CalendarDay(4397, LocalDate(2020, 7, 16)) -> Seq(
           TournamentRound(EnglandChamp, "тур 5")
         ),
-        CalendarDay(4314, LocalDate(2020, 3, 16)) -> Seq(
+        CalendarDay(4400, LocalDate(2020, 7, 20)) -> Seq(
           TournamentRound(EnglandChamp, "тур 6")
         ),
-        CalendarDay(4316, LocalDate(2020, 3, 19)) -> Seq(
+        CalendarDay(4402, LocalDate(2020, 7, 23)) -> Seq(
           TournamentRound(EnglandChamp, "тур 7")
         ),
-        CalendarDay(4318, LocalDate(2020, 3, 23)) -> Seq(
+        CalendarDay(4404, LocalDate(2020, 7, 27)) -> Seq(
           TournamentRound(EnglandChamp, "тур 8")
         ),
-        CalendarDay(4320, LocalDate(2020, 3, 26)) -> Seq(
+        CalendarDay(4406, LocalDate(2020, 7, 30)) -> Seq(
           TournamentRound(EnglandChamp, "тур 9")
         ),
-        CalendarDay(4322, LocalDate(2020, 3, 30)) -> Seq(
+        CalendarDay(4408, LocalDate(2020, 8, 3)) -> Seq(
           TournamentRound(EnglandChamp, "тур 10")
         ),
-        CalendarDay(4324, LocalDate(2020, 4, 2)) -> Seq(
+        CalendarDay(4410, LocalDate(2020, 8, 6)) -> Seq(
           TournamentRound(EnglandChamp, "тур 11")
         ),
-        CalendarDay(4326, LocalDate(2020, 4, 6)) -> Seq(
+        CalendarDay(4412, LocalDate(2020, 8, 10)) -> Seq(
           TournamentRound(EnglandChamp, "тур 12")
         ),
-        CalendarDay(4328, LocalDate(2020, 4, 8)) -> Seq(
+        CalendarDay(4414, LocalDate(2020, 8, 12)) -> Seq(
           TournamentRound(EnglandChamp, "тур 13")
         ),
-        CalendarDay(4333, LocalDate(2020, 4, 13)) -> Seq(
+        CalendarDay(4419, LocalDate(2020, 8, 17)) -> Seq(
           TournamentRound(EnglandChamp, "тур 14")
         ),
-        CalendarDay(4335, LocalDate(2020, 4, 15)) -> Seq(
+        CalendarDay(4421, LocalDate(2020, 8, 19)) -> Seq(
           TournamentRound(EnglandChamp, "тур 15")
         ),
-        CalendarDay(4337, LocalDate(2020, 4, 17)) -> Seq(
+        CalendarDay(4423, LocalDate(2020, 8, 21)) -> Seq(
           TournamentRound(EnglandChamp, "тур 16")
         ),
-        CalendarDay(4339, LocalDate(2020, 4, 20)) -> Seq(
+        CalendarDay(4425, LocalDate(2020, 8, 24)) -> Seq(
           TournamentRound(EnglandChamp, "тур 17")
         ),
-        CalendarDay(4341, LocalDate(2020, 4, 22)) -> Seq(
+        CalendarDay(4427, LocalDate(2020, 8, 26)) -> Seq(
           TournamentRound(EnglandChamp, "тур 18")
         ),
-        CalendarDay(4343, LocalDate(2020, 4, 24)) -> Seq(
+        CalendarDay(4429, LocalDate(2020, 8, 28)) -> Seq(
           TournamentRound(EnglandChamp, "тур 19")
         ),
-        CalendarDay(4345, LocalDate(2020, 4, 27)) -> Seq(
+        CalendarDay(4431, LocalDate(2020, 8, 31)) -> Seq(
           TournamentRound(EnglandChamp, "тур 20")
         ),
-        CalendarDay(4347, LocalDate(2020, 4, 29)) -> Seq(
+        CalendarDay(4433, LocalDate(2020, 9, 2)) -> Seq(
           TournamentRound(EnglandChamp, "тур 21")
         ),
-        CalendarDay(4349, LocalDate(2020, 5, 1)) -> Seq(
+        CalendarDay(4435, LocalDate(2020, 9, 4)) -> Seq(
           TournamentRound(EnglandChamp, "тур 22")
         ),
-        CalendarDay(4351, LocalDate(2020, 5, 4)) -> Seq(
+        CalendarDay(4437, LocalDate(2020, 9, 7)) -> Seq(
           TournamentRound(EnglandChamp, "тур 23")
         ),
-        CalendarDay(4353, LocalDate(2020, 5, 6)) -> Seq(
+        CalendarDay(4439, LocalDate(2020, 9, 9)) -> Seq(
           TournamentRound(EnglandChamp, "тур 24")
         ),
-        CalendarDay(4355, LocalDate(2020, 5, 8)) -> Seq(
+        CalendarDay(4441, LocalDate(2020, 9, 11)) -> Seq(
           TournamentRound(EnglandChamp, "тур 25")
         ),
-        CalendarDay(4357, LocalDate(2020, 5, 11)) -> Seq(
+        CalendarDay(4443, LocalDate(2020, 9, 14)) -> Seq(
           TournamentRound(EnglandChamp, "тур 26")
         ),
       )

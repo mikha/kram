@@ -2,14 +2,15 @@ enablePlugins(ScalaJSPlugin)
 
 name := "KRAM"
 
-scalaVersion := "2.12.3"
+scalaVersion := "2.13.2"
+
+scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature")
 
 scalaJSStage in Global := FastOptStage
 
-skip in packageJSDependencies := false
+scalaJSUseMainModuleInitializer := true
 
-jsEnv := new org.scalajs.jsenv.jsdomnodejs.JSDOMNodeJSEnv
+mainClass in Compile := Some("com.dewdrop.kram.KramApp")
 
-scalaJSUseMainModuleInitializer in Compile := true
-
-libraryDependencies += "com.lihaoyi" %%% "scalatags" % "0.6.7"
+libraryDependencies += "com.lihaoyi" %%% "scalatags" % "0.9.1"
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.0" % "test"
