@@ -8,7 +8,7 @@ object Data {
   import Tournaments._
   object SeasonData extends Season {
     override val name = "КРАМ: 36-й сезон"
-    override val version = "10.0.0"
+    override val version = "10.0.1"
     override val participantsOnly: Boolean = true
     private object TeamsWithMinutes {
       val Arsenal = Team(14, "Арсенал", 0)
@@ -302,49 +302,49 @@ object Data {
         CalendarDay(4410, LocalDate(2020, 8, 6)) -> Seq(
           TournamentRound(EnglandChamp, "тур 11")
         ),
-        CalendarDay(4412, LocalDate(2020, 8, 10)) -> Seq(
+        CalendarDay(4412, LocalDate(2020, 8, 12)) -> Seq(
           TournamentRound(EnglandChamp, "тур 12")
         ),
-        CalendarDay(4414, LocalDate(2020, 8, 12)) -> Seq(
+        CalendarDay(4414, LocalDate(2020, 8, 19)) -> Seq(
           TournamentRound(EnglandChamp, "тур 13")
         ),
-        CalendarDay(4419, LocalDate(2020, 8, 17)) -> Seq(
+        CalendarDay(4419, LocalDate(2020, 8, 24)) -> Seq(
           TournamentRound(EnglandChamp, "тур 14")
         ),
-        CalendarDay(4421, LocalDate(2020, 8, 19)) -> Seq(
+        CalendarDay(4421, LocalDate(2020, 8, 26)) -> Seq(
           TournamentRound(EnglandChamp, "тур 15")
         ),
-        CalendarDay(4423, LocalDate(2020, 8, 21)) -> Seq(
+        CalendarDay(4423, LocalDate(2020, 8, 28)) -> Seq(
           TournamentRound(EnglandChamp, "тур 16")
         ),
-        CalendarDay(4425, LocalDate(2020, 8, 24)) -> Seq(
+        CalendarDay(4425, LocalDate(2020, 8, 31)) -> Seq(
           TournamentRound(EnglandChamp, "тур 17")
         ),
-        CalendarDay(4427, LocalDate(2020, 8, 26)) -> Seq(
+        CalendarDay(4427, LocalDate(2020, 9, 2)) -> Seq(
           TournamentRound(EnglandChamp, "тур 18")
         ),
-        CalendarDay(4429, LocalDate(2020, 8, 28)) -> Seq(
+        CalendarDay(4429, LocalDate(2020, 9, 4)) -> Seq(
           TournamentRound(EnglandChamp, "тур 19")
         ),
-        CalendarDay(4431, LocalDate(2020, 8, 31)) -> Seq(
+        CalendarDay(4431, LocalDate(2020, 9, 7)) -> Seq(
           TournamentRound(EnglandChamp, "тур 20")
         ),
-        CalendarDay(4433, LocalDate(2020, 9, 2)) -> Seq(
+        CalendarDay(4433, LocalDate(2020, 9, 9)) -> Seq(
           TournamentRound(EnglandChamp, "тур 21")
         ),
-        CalendarDay(4435, LocalDate(2020, 9, 4)) -> Seq(
+        CalendarDay(4435, LocalDate(2020, 9, 11)) -> Seq(
           TournamentRound(EnglandChamp, "тур 22")
         ),
-        CalendarDay(4437, LocalDate(2020, 9, 7)) -> Seq(
+        CalendarDay(4437, LocalDate(2020, 9, 14)) -> Seq(
           TournamentRound(EnglandChamp, "тур 23")
         ),
-        CalendarDay(4439, LocalDate(2020, 9, 9)) -> Seq(
+        CalendarDay(4439, LocalDate(2020, 9, 16)) -> Seq(
           TournamentRound(EnglandChamp, "тур 24")
         ),
-        CalendarDay(4441, LocalDate(2020, 9, 11)) -> Seq(
+        CalendarDay(4441, LocalDate(2020, 9, 18)) -> Seq(
           TournamentRound(EnglandChamp, "тур 25")
         ),
-        CalendarDay(4443, LocalDate(2020, 9, 14)) -> Seq(
+        CalendarDay(4443, LocalDate(2020, 9, 21)) -> Seq(
           TournamentRound(EnglandChamp, "тур 26")
         ),
       )
