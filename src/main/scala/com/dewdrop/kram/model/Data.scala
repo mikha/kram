@@ -20,7 +20,7 @@ object Data {
       val AstonVilla: Team =  Team(809, "Астон Вилла",       3 -> 90)
       val Birmingham: Team =  Team(23,  "Бирмингем Сити",    0)
       val Blackburn: Team =   Team(862, "Блэкберн Роверс",   3 -> 180)
-      val Bolton: Team =      Team(40,  "Болтон Уондерерс",  0)
+      val Bolton: Team =      Team(40,  "Болтон Уондерерс",  3 -> 120)
       val WestHam: Team =     Team(195, "Вест Хэм Юнайтед",  0)
       val Liverpool: Team =   Team(143, "Ливерпуль",         3 -> 180)
       val Leeds: Team =       Team(198, "Лидс Юнайтед",      0)

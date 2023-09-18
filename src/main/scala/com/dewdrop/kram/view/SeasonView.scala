@@ -58,10 +58,11 @@ case class FixtureListView(fixtureList: FixtureList, participantsOnly: Boolean)
     case (day, rounds) =>
       CalendarDayView(
         day,
-        rounds.view
-          .mapValues(_.filter(f => !participantsOnly || f.hasParticipant))
+        rounds
+          .map { case (round, fixtures) =>
+            round -> fixtures.filter(f => !participantsOnly || f.minutesInRound(round.round) > 0)
+          }
           .filter(_._2.nonEmpty)
-          .toMap
       )
   }
   private val elem =
