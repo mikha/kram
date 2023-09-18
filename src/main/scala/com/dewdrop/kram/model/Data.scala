@@ -11,7 +11,7 @@ object Data {
 
   object SeasonData extends Season {
     override val name = "КРАМ: 44-й сезон"
-    override val version = "16.0.1"
+    override val version = "16.0.2"
     override val participantsOnly: Boolean = true
 
     private object TeamsWithMinutes {
