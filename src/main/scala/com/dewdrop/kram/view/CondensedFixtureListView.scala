@@ -33,7 +33,7 @@ case class CondensedFixtureListView(
                   renderTeam(fixture.host, host = true),
                   div(
                     `class` := "col-xs-1 text-center",
-                    span(`class` := "badge", fixture.minutes)
+                    span(`class` := "badge", fixture.minutesInRound(round.round))
                   ),
                   renderTeam(fixture.visitor, host = false),
                   div(

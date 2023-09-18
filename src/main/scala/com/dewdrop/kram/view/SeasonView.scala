@@ -59,7 +59,7 @@ case class FixtureListView(fixtureList: FixtureList, participantsOnly: Boolean)
       CalendarDayView(
         day,
         rounds.view
-          .mapValues(_.filter(f => !participantsOnly || f.minutes > 0))
+          .mapValues(_.filter(f => !participantsOnly || f.hasParticipant))
           .filter(_._2.nonEmpty)
           .toMap
       )
@@ -90,7 +90,7 @@ case class TournamentRoundView(day: CalendarDay,
                                round: TournamentRound,
                                fixtures: Seq[Fixture])
     extends View {
-  private val children = fixtures.map(FixtureView)
+  private val children = fixtures.map(FixtureView(_, round))
   private val elem = div(
     `class` := "list-group",
     div(
@@ -105,7 +105,7 @@ case class TournamentRoundView(day: CalendarDay,
   override def view(): JsDom.all.ConcreteHtmlTag[Element] = elem
 }
 
-case class FixtureView(fixture: Fixture) extends View {
+case class FixtureView(fixture: Fixture, round: TournamentRound) extends View {
   private lazy val host =
     div(`class` := "col-xs-5 text-right", TeamView(fixture.host).view())
   private lazy val visitor =
@@ -117,7 +117,7 @@ case class FixtureView(fixture: Fixture) extends View {
       host,
       div(
         `class` := "col-xs-1 text-center",
-        span(`class` := "badge", fixture.minutes)
+        span(`class` := "badge", fixture.minutesInRound(round.round))
       ),
       visitor
     )

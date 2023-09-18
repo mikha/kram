@@ -1,7 +1,7 @@
 package com.dewdrop.kram.model
 
 case class Fixture(host: Team, visitor: Team) {
-  lazy val minutes: Int = Math.min(host.minutes, visitor.minutes)
+  def minutesInRound(round: Int): Int = Math.min(host.minutesInRound(round), visitor.minutesInRound(round))
   lazy val hasParticipant: Boolean = host.participant || visitor.participant
 }
 
